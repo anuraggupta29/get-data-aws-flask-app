@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BECM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='icon.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+</head>
+<body>
+    <div class="image-container">
+        <img class="logoIcon" src="{{ url_for('static', filename='icon.png')}}">
+    </div>
+
+    <h1>Battery Energy Consumption Monitor</h1> 
+    
+    <div class="formGrp">
+        <form class="form1" method="POST">
+            <label for="select-date">Select Date:</label>
+            <input type="date" id="select-date" name="selected_date" required><br><br>
+            
+            <button class="getRawData" type="submit" name="run" value="true">GET RAW DATA</button>
+        </form>
+        <form class="form2" method="GET">
+            <button class="downloadSummary" type="submit" id="download-button" name="download" value="true" disabled>DOWNLOAD SUMMARY</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='ui.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>
